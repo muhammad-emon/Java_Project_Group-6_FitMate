@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.fitmate.controller.DashboardController"
+            style="-fx-background-color: #121212;">
+
+    <!-- ═══ Top Navbar ═══ -->
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="10">
+            <padding><Insets top="0" bottom="0" left="20" right="20"/></padding>
+
+            <!-- Brand -->
+            <HBox alignment="CENTER_LEFT" spacing="0" HBox.hgrow="NEVER">
+                <Label text="Fit" style="-fx-text-fill: #00C897; -fx-font-size: 28px; -fx-font-weight: 800;"/>
+                <Label text="Mate" style="-fx-text-fill: #E0E0E0; -fx-font-size: 28px; -fx-font-weight: 800;"/>
+            </HBox>
+
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Nav Buttons -->
+            <HBox spacing="6" alignment="CENTER_RIGHT">
+                <Button fx:id="btnHome" text="Dashboard" styleClass="btn-nav" onAction="#navHome"/>
+                <Button fx:id="btnProfile" text="Profile" styleClass="btn-nav" onAction="#navProfile"/>
+                <Button fx:id="btnMetrics" text="Health Metrics" styleClass="btn-nav" onAction="#navMetrics"/>
+                <Button fx:id="btnDiet" text="Diet Plan" styleClass="btn-nav" onAction="#navDiet"/>
+                <Button fx:id="btnAI" text="AI Coach" styleClass="btn-nav" onAction="#navAICoach"/>
+                <Button text="Sign Out" styleClass="btn-danger" onAction="#handleSignOut"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- ═══ Content Area ═══ -->
+    <center>
+        <ScrollPane fx:id="contentScrollPane" fitToWidth="true"
+                    style="-fx-background: #121212; -fx-background-color: #121212;">
+            <StackPane fx:id="contentArea" style="-fx-background-color: #121212;">
+                <padding><Insets top="20" bottom="40" left="30" right="30"/></padding>
+            </StackPane>
+        </ScrollPane>
+    </center>
+</BorderPane>

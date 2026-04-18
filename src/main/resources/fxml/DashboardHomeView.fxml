@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitmate.controller.DashboardHomeController"
+      spacing="20" style="-fx-background-color: #121212;">
+
+    <!-- 1️⃣ Greeting Card -->
+    <VBox fx:id="greetingCard" styleClass="card" spacing="8">
+        <Label fx:id="greetingLabel" text="Welcome back! 👋" styleClass="label-heading"/>
+        <Label text="Here's a quick snapshot of your health, goals, and today's plan." styleClass="label-secondary"/>
+        <HBox spacing="30" alignment="CENTER_LEFT">
+            <VBox spacing="2">
+                <Label text="Goal" styleClass="label-secondary" style="-fx-font-size: 12px;"/>
+                <Label fx:id="goalLabel" text="Set your goal" styleClass="label-accent" style="-fx-font-weight: bold;"/>
+            </VBox>
+            <VBox spacing="2">
+                <Label text="Current Weight" styleClass="label-secondary" style="-fx-font-size: 12px;"/>
+                <Label fx:id="currentWeightLabel" text="—" style="-fx-font-weight: bold;"/>
+            </VBox>
+            <VBox spacing="2">
+                <Label text="Target Weight" styleClass="label-secondary" style="-fx-font-size: 12px;"/>
+                <Label fx:id="targetWeightLabel" text="—" style="-fx-font-weight: bold;"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <!-- 2️⃣ Metrics Cards Row -->
+    <HBox spacing="16">
+        <!-- BMI -->
+        <VBox styleClass="card" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="BMI" styleClass="label-subheading" style="-fx-font-size: 13px;"/>
+            <Label fx:id="bmiLabel" text="—" styleClass="label-metric-value"/>
+            <Label fx:id="bmiCatLabel" text="" style="-fx-text-fill: #FF884B; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <!-- TDEE -->
+        <VBox styleClass="card" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Daily Energy (TDEE)" styleClass="label-subheading" style="-fx-font-size: 13px;"/>
+            <HBox alignment="BASELINE_LEFT" spacing="6">
+                <Label fx:id="tdeeLabel" text="—" styleClass="label-metric-value" style="-fx-text-fill: #00C897;"/>
+                <Label text="kcal/day" styleClass="label-metric-unit"/>
+            </HBox>
+            <Label text="Based on your activity level." styleClass="label-secondary" style="-fx-font-size: 11px;"/>
+        </VBox>
+
+        <!-- BMR -->
+        <VBox styleClass="card" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="BMR" styleClass="label-subheading" style="-fx-font-size: 13px;"/>
+            <HBox alignment="BASELINE_LEFT" spacing="6">
+                <Label fx:id="bmrLabel" text="—" styleClass="label-metric-value"/>
+                <Label text="kcal/day" styleClass="label-metric-unit"/>
+            </HBox>
+            <Label text="Energy burned at rest." styleClass="label-secondary" style="-fx-font-size: 11px;"/>
+        </VBox>
+    </HBox>
+
+    <!-- 3️⃣ Diet Overview + Progress -->
+    <HBox spacing="16">
+        <!-- Diet Overview -->
+        <VBox styleClass="card" spacing="10" HBox.hgrow="ALWAYS" prefWidth="500">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Today's Diet Overview" styleClass="label-subheading" style="-fx-font-size: 13px;" HBox.hgrow="ALWAYS"/>
+                <Hyperlink text="View full plan" onAction="#goToDiet"/>
+            </HBox>
+            <Label fx:id="dietOverviewLabel" text="No active diet plan yet. Generate a plan from the Diet page."
+                   styleClass="label-secondary" wrapText="true"/>
+        </VBox>
+
+        <!-- Progress -->
+        <VBox styleClass="card" spacing="10" prefWidth="250">
+            <Label text="Progress" styleClass="label-subheading" style="-fx-font-size: 13px;"/>
+            <Label fx:id="progressLabel" text="Log your weight and set a target to track progress."
+                   styleClass="label-secondary" wrapText="true"/>
+            <Hyperlink text="View detailed metrics" onAction="#goToMetrics"/>
+        </VBox>
+    </HBox>
+
+    <!-- 4️⃣ AI Coach Preview + Quick Actions -->
+    <HBox spacing="16">
+        <!-- AI Coach -->
+        <VBox styleClass="card" spacing="10" HBox.hgrow="ALWAYS" prefWidth="500">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="AI Coach" styleClass="label-subheading" style="-fx-font-size: 13px;" HBox.hgrow="ALWAYS"/>
+                <Hyperlink text="Open chat" onAction="#goToAICoach"/>
+            </HBox>
+            <Label fx:id="aiCoachPreviewLabel"
+                   text="You haven't chatted with your AI Coach yet. Ask a question to get started."
+                   styleClass="label-secondary" wrapText="true"/>
+        </VBox>
+
+        <!-- Quick Actions -->
+        <VBox styleClass="card" spacing="10" prefWidth="250">
+            <Label text="Quick Actions" styleClass="label-subheading" style="-fx-font-size: 13px;"/>
+            <Button text="Update Profile" styleClass="btn-quick-action" maxWidth="Infinity" onAction="#goToProfile"/>
+            <Button text="Recalculate Metrics" styleClass="btn-quick-action" maxWidth="Infinity" onAction="#goToMetrics"/>
+            <Button text="Generate / View Diet Plan" styleClass="btn-quick-action" maxWidth="Infinity" onAction="#goToDiet"/>
+            <Button text="Ask AI Coach" styleClass="btn-primary" maxWidth="Infinity" onAction="#goToAICoach"/>
+        </VBox>
+    </HBox>
+</VBox>
