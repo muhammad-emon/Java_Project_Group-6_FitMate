@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitmate.controller.AICoachController"
+      spacing="14" style="-fx-background-color: #121212;" VBox.vgrow="ALWAYS">
+
+    <VBox styleClass="card" spacing="14" VBox.vgrow="ALWAYS">
+        <!-- Header -->
+        <VBox spacing="4">
+            <Label text="Zenith — your personal fitness coach." styleClass="label-heading" style="-fx-font-size: 20px;"/>
+            <Label text="A smart companion that gives you actionable fitness and nutrition guidance—right when you need it."
+                   styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+        </VBox>
+
+        <!-- Error -->
+        <Label fx:id="errorLabel" styleClass="label-error" visible="false" managed="false" wrapText="true"/>
+
+        <!-- Chat Area -->
+        <ScrollPane fx:id="chatScrollPane" fitToWidth="true" VBox.vgrow="ALWAYS"
+                    style="-fx-background: #181818; -fx-background-color: #181818; -fx-border-color: #333333; -fx-border-radius: 8; -fx-background-radius: 8;"
+                    minHeight="350" maxHeight="500">
+            <VBox fx:id="chatContainer" spacing="10" style="-fx-background-color: #181818;">
+                <padding><Insets top="14" bottom="14" left="14" right="14"/></padding>
+            </VBox>
+        </ScrollPane>
+
+        <!-- Input Area -->
+        <HBox spacing="10">
+            <TextField fx:id="messageInput" promptText="Ask Zenith anything about fitness, diet or habits..."
+                       HBox.hgrow="ALWAYS" onAction="#handleSend"
+                       style="-fx-background-color: #111111; -fx-text-fill: #E0E0E0; -fx-border-color: #333333; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;"/>
+            <Button fx:id="sendButton" text="Send" styleClass="btn-primary" onAction="#handleSend"/>
+        </HBox>
+    </VBox>
+</VBox>
