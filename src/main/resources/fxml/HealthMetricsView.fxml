@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitmate.controller.HealthMetricsController"
+      spacing="20" style="-fx-background-color: #121212;">
+
+    <!-- Top: Message when profile is incomplete -->
+    <VBox fx:id="incompleteBox" styleClass="card" spacing="12" alignment="CENTER"
+          visible="false" managed="false">
+        <Label text="Complete Your Profile" styleClass="label-heading"/>
+        <Label text="We need your Age, Gender, Height, Weight, and Activity Level to calculate health metrics."
+               styleClass="label-secondary" wrapText="true"/>
+        <Button text="Go to Profile" styleClass="btn-primary" onAction="#goToProfile"/>
+    </VBox>
+
+    <!-- Main Content -->
+    <HBox fx:id="mainContent" spacing="20" visible="false" managed="false">
+        <!-- Left Column: Weight Chart -->
+        <VBox spacing="20" HBox.hgrow="ALWAYS">
+            <VBox fx:id="chartCard" styleClass="card" spacing="14">
+                <Label text="Weight Progress" styleClass="label-heading" style="-fx-font-size: 18px;"/>
+                <Canvas fx:id="weightChartCanvas" width="500" height="500"/>
+
+                <!-- Log Weight Form -->
+                <HBox spacing="10">
+                    <TextField fx:id="weightInput" promptText="Enter weight in kg" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="logWeightBtn" text="Log" styleClass="btn-primary" onAction="#handleLogWeight"/>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Right Column: Metric Cards -->
+        <VBox spacing="16" prefWidth="300">
+            <!-- BMI Card -->
+            <VBox styleClass="card" spacing="8">
+                <Label text="Body Mass Index BMI" styleClass="label-subheading"/>
+                <HBox alignment="CENTER">
+                    <Canvas fx:id="bmiGaugeCanvas" width="200" height="130"/>
+                </HBox>
+                <Label fx:id="bmiValueLabel" text="-" styleClass="label-metric-value" alignment="CENTER"
+                       maxWidth="Infinity"/>
+                <Label fx:id="bmiCategoryLabel" text="" alignment="CENTER" maxWidth="Infinity"
+                       style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            </VBox>
+
+            <!-- BMR Card -->
+            <VBox styleClass="card" spacing="6">
+                <Label text="Basal Metabolic Rate BMR" styleClass="label-subheading"/>
+                <HBox alignment="BASELINE_LEFT" spacing="6">
+                    <Label fx:id="bmrLabel" text="-" styleClass="label-metric-value"/>
+                    <Label text="kcal per day" styleClass="label-metric-unit"/>
+                </HBox>
+            </VBox>
+
+            <!-- TDEE Card -->
+            <VBox styleClass="card" spacing="6">
+                <Label text="Est. Daily Energy TDEE" styleClass="label-subheading"/>
+                <HBox alignment="BASELINE_LEFT" spacing="6">
+                    <Label fx:id="tdeeLabel" text="-" styleClass="label-metric-value" style="-fx-text-fill: #00C897;"/>
+                    <Label text="kcal per day" styleClass="label-metric-unit"/>
+                </HBox>
+                <Label text="Based on your profile activity level." styleClass="label-secondary" style="-fx-font-size: 11px;"/>
+            </VBox>
+
+            <!-- BFP Card -->
+            <VBox fx:id="bfpCard" styleClass="card" spacing="6" visible="false" managed="false">
+                <Label text="Body Fat Percentage" styleClass="label-subheading"/>
+                <HBox alignment="BASELINE_LEFT" spacing="6">
+                    <Label fx:id="bfpLabel" text="-" styleClass="label-metric-value"/>
+                    <Label fx:id="bfpUnitLabel" styleClass="label-metric-unit"/>
+                </HBox>
+                <Label text="Estimated based on your BMI" styleClass="label-secondary" style="-fx-font-size: 11px;"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>
