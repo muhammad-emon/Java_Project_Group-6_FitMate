@@ -121,7 +121,8 @@ public class DashboardHomeController {
                         List<String> names = new ArrayList<>();
                         for (Object item : items) {
                             if (item instanceof Map<?, ?> itemMap) {
-                                names.add(String.valueOf(itemMap.getOrDefault("name", "?")));
+                                Object nameObj = itemMap.get("name");
+                                names.add(nameObj != null ? String.valueOf(nameObj) : "?");
                             }
                         }
                         sb.append(String.join(", ", names)).append("\n");
