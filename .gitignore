@@ -1,0 +1,18 @@
+# ── Sensitive credentials — NEVER push these ──
+serviceAccountKey.json
+.env
+
+# ── Maven build output ──
+target/
+
+# ── IDE & editor files ──
+.vscode/
+.idea/
+*.iml
+*.classpath
+*.project
+.settings/
+
+# ── OS generated files ──
+.DS_Store
+Thumbs.db

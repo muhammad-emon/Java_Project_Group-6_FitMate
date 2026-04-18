@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitmate.controller.DietPlanController"
+      spacing="20" style="-fx-background-color: #121212;">
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT">
+        <Label text="🍽️ Weekly Diet Plan" styleClass="label-heading" style="-fx-text-fill: #00C897;"/>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button fx:id="generateBtn" text="Generate New Plan" styleClass="btn-primary"
+                onAction="#handleGenerate"/>
+    </HBox>
+
+    <!-- Loading indicator -->
+    <Label fx:id="loadingLabel" text="Generating your AI-powered diet plan…" styleClass="label-secondary"
+           visible="false" managed="false" alignment="CENTER" maxWidth="Infinity"/>
+
+    <!-- Preferences Form (initially hidden) -->
+    <VBox fx:id="prefsForm" styleClass="card" spacing="14" maxWidth="500" visible="false" managed="false">
+        <Label text="🩺 Dietary &amp; Health Preferences" styleClass="label-heading" style="-fx-text-fill: #00C897; -fx-font-size: 18px;"/>
+
+        <VBox spacing="5">
+            <Label text="Diet Type" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+            <ComboBox fx:id="dietTypeCombo" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Allergies" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+            <TextField fx:id="allergiesField" promptText="e.g. nuts, dairy"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Disliked Foods" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+            <TextField fx:id="dislikedField" promptText="e.g. broccoli, tofu"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Medical Conditions" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+            <TextField fx:id="medicalField" promptText="e.g. diabetes, none"/>
+        </VBox>
+
+        <Button text="Submit &amp; Generate Plan" styleClass="btn-primary" maxWidth="Infinity"
+                onAction="#submitPrefsAndGenerate"/>
+    </VBox>
+
+    <!-- No Plan Message -->
+    <VBox fx:id="noPlanBox" alignment="CENTER" spacing="14" visible="false" managed="false">
+        <Label text="No diet plan available yet." styleClass="label-secondary"/>
+        <Button text="Generate New Plan" styleClass="btn-primary" onAction="#handleGenerate"/>
+    </VBox>
+
+    <!-- Diet Plan Display -->
+    <VBox fx:id="planDisplay" spacing="20" visible="false" managed="false"/>
+</VBox>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fx:id="scrollPane" fitToWidth="true" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.fitmate.controller.LandingController"
+            style="-fx-background: #121212; -fx-background-color: #121212;">
+
+    <VBox alignment="CENTER" spacing="0" style="-fx-background-color: #121212;">
+
+        <!-- Navbar -->
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="20">
+            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                <Label text="Fit" style="-fx-text-fill: #00C897; -fx-font-size: 28px; -fx-font-weight: 800;"/>
+                <Label text="Mate" style="-fx-text-fill: #E0E0E0; -fx-font-size: 28px; -fx-font-weight: 800;"/>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER_RIGHT">
+                <Button text="Features" style="-fx-background-color: transparent; -fx-text-fill: #E0E0E0; -fx-font-weight: bold; -fx-cursor: hand;" onAction="#scrollToFeatures"/>
+                <Button text="Contact Us" style="-fx-background-color: transparent; -fx-text-fill: #E0E0E0; -fx-font-weight: bold; -fx-cursor: hand;" onAction="#scrollToContactUs"/>
+                <Button text="Sign Up or Log In" styleClass="btn-primary" onAction="#goToSignup"/>
+            </HBox>
+        </HBox>
+
+        <!-- Hero Section -->
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #121212;"
+              minHeight="500" maxWidth="800">
+            <padding><Insets top="80" bottom="60" left="40" right="40"/></padding>
+            <Label text="Smart Fitness Application with" styleClass="label-hero-title"
+                   wrapText="true" alignment="CENTER"/>
+            <Label text="AI Chatbot" style="-fx-font-size: 42px; -fx-font-weight: 800; -fx-text-fill: #00C897;"
+                   alignment="CENTER"/>
+            <Label styleClass="label-hero-subtitle" alignment="CENTER" wrapText="true" maxWidth="600"
+                   text="An intuitive platform featuring an AI chatbot that personalizes fitness plans, assists in workouts, and tracks your progress in real time. Achieve your goals smarter, not harder."/>
+            <Button text="Get Started" styleClass="btn-primary"
+                    style="-fx-font-size: 16px; -fx-padding: 14 32; -fx-background-radius: 30;"
+                    onAction="#goToSignup"/>
+        </VBox>
+
+        <!-- Features Section -->
+        <VBox fx:id="featuresSection" spacing="30" style="-fx-background-color: #1E1E1E;">
+            <padding><Insets top="60" bottom="60" left="40" right="40"/></padding>
+
+            <!-- Feature 1 -->
+            <VBox styleClass="feature-card" spacing="12" maxWidth="700" alignment="CENTER_LEFT">
+                <Label text="AI POWERED PERSONALIZATION" style="-fx-text-fill: #00C897; -fx-font-size: 12px; -fx-font-weight: 800;"/>
+                <Label text="AI Diet and Workout Planner" styleClass="label-heading"/>
+                <Label text="Our AI generates personalized diet and workout plans tailored to your specific goals, dietary restrictions, and lifestyle."
+                       styleClass="label-secondary" wrapText="true"/>
+            </VBox>
+
+            <!-- Feature 2 -->
+            <HBox alignment="CENTER_RIGHT">
+                <VBox styleClass="feature-card" spacing="12" maxWidth="700" alignment="CENTER_LEFT">
+                    <Label text="COMMUNITY AND MOTIVATION" style="-fx-text-fill: #FF884B; -fx-font-size: 12px; -fx-font-weight: 800;"/>
+                    <Label text="Gamified Challenges" styleClass="label-heading"/>
+                    <Label text="Stay motivated with fun, competitive challenges. Earn badges and climb leaderboards with friends."
+                           styleClass="label-secondary" wrapText="true"/>
+                </VBox>
+            </HBox>
+
+            <!-- Feature 3 -->
+            <VBox styleClass="feature-card" spacing="12" maxWidth="700" alignment="CENTER_LEFT">
+                <Label text="24/7 AI SUPPORT" style="-fx-text-fill: #00C897; -fx-font-size: 12px; -fx-font-weight: 800;"/>
+                <Label text="Interactive Fitness Assistant" styleClass="label-heading"/>
+                <Label text="Get instant guidance and motivation from your AI coach, available anytime, anywhere."
+                       styleClass="label-secondary" wrapText="true"/>
+            </VBox>
+        </VBox>
+
+        <!-- Footer -->
+        <VBox fx:id="footerSection" alignment="CENTER" spacing="20" style="-fx-background-color: #121212;">
+            <padding><Insets top="60" bottom="40" left="40" right="40"/></padding>
+            <Label text="Our Mission and Commitment" styleClass="label-heading"/>
+            <Label text="FitMate was founded on the principle that personalized fitness should be accessible to everyone."
+                   styleClass="label-secondary" wrapText="true" maxWidth="600" alignment="CENTER"/>
+
+            <HBox spacing="20" alignment="CENTER">
+                <VBox styleClass="feature-card" spacing="8" prefWidth="220">
+                    <Label text="Privacy and Security" styleClass="label-subheading"/>
+                    <Label text="Your data is encrypted and never shared." styleClass="label-secondary" wrapText="true"/>
+                </VBox>
+                <VBox styleClass="feature-card" spacing="8" prefWidth="220">
+                    <Label text="24/7 Support" styleClass="label-subheading"/>
+                    <Label text="Our team and AI are always available." styleClass="label-secondary" wrapText="true"/>
+                </VBox>
+                <VBox styleClass="feature-card" spacing="8" prefWidth="220">
+                    <Label text="Contact Us" styleClass="label-subheading"/>
+                    <Label text="support@fitmate.ai" styleClass="label-secondary" wrapText="true"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- Bottom Bar -->
+        <HBox alignment="CENTER" style="-fx-background-color: #1E1E1E; -fx-border-color: #333333; -fx-border-width: 1 0 0 0;">
+            <padding><Insets top="20" bottom="20"/></padding>
+            <Label text="2026 FitMate. All rights reserved. Built with Science and Passion." styleClass="label-secondary"/>
+        </HBox>
+
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,350 @@
+/* ══════════════════════════════════════════════════════
+   FitMate — Global Dark Theme Stylesheet
+   ══════════════════════════════════════════════════════ */
+
+/* ── Root Variables ── */
+* {
+    -fx-primary-bg:    #121212;
+    -fx-secondary-bg:  #1E1E1E;
+    -fx-primary-accent: #00C897;
+    -fx-secondary-accent: #FF884B;
+    -fx-primary-text:  #E0E0E0;
+    -fx-secondary-text: #9E9E9E;
+    -fx-error-red:     #DC2626;
+}
+
+/* ── Scene / Root ── */
+.root {
+    -fx-background-color: #121212;
+    -fx-font-family: "Segoe UI", "Inter", "Helvetica Neue", sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* ── Labels ── */
+.label {
+    -fx-text-fill: #E0E0E0;
+}
+
+.label-secondary {
+    -fx-text-fill: #9E9E9E;
+}
+
+.label-accent {
+    -fx-text-fill: #00C897;
+}
+
+.label-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E0E0E0;
+}
+
+.label-heading {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E0E0E0;
+}
+
+.label-subheading {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #E0E0E0;
+}
+
+.label-hero-title {
+    -fx-font-size: 42px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #E0E0E0;
+}
+
+.label-hero-subtitle {
+    -fx-font-size: 18px;
+    -fx-text-fill: #9E9E9E;
+    -fx-wrap-text: true;
+}
+
+.label-metric-value {
+    -fx-font-size: 36px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #E0E0E0;
+}
+
+.label-metric-unit {
+    -fx-font-size: 16px;
+    -fx-text-fill: #9E9E9E;
+}
+
+.label-error {
+    -fx-text-fill: #DC2626;
+    -fx-font-size: 13px;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+    -fx-background-color: #00C897;
+    -fx-text-fill: #121212;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 24;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-primary:hover {
+    -fx-background-color: #00E0A8;
+}
+.btn-primary:disabled {
+    -fx-opacity: 0.6;
+}
+
+.btn-secondary {
+    -fx-background-color: #FF884B;
+    -fx-text-fill: #121212;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 24;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover {
+    -fx-background-color: #FFA06B;
+}
+
+.btn-danger {
+    -fx-background-color: #DC2626;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-danger:hover {
+    -fx-background-color: #EF4444;
+}
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9E9E9E;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-padding: 8 12;
+    -fx-background-radius: 6;
+}
+.btn-ghost:hover {
+    -fx-text-fill: #E0E0E0;
+    -fx-background-color: #2A2A2A;
+}
+
+.btn-nav {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9E9E9E;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 14;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.btn-nav:hover {
+    -fx-text-fill: #E0E0E0;
+    -fx-background-color: #2A2A2A;
+}
+.btn-nav-active {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #E0E0E0;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 14;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.btn-quick-action {
+    -fx-background-color: #181818;
+    -fx-text-fill: #E0E0E0;
+    -fx-font-size: 13px;
+    -fx-padding: 10 16;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+}
+.btn-quick-action:hover {
+    -fx-background-color: #252525;
+}
+
+.btn-goal {
+    -fx-background-color: #121212;
+    -fx-text-fill: #9E9E9E;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 16;
+    -fx-background-radius: 8;
+    -fx-border-color: #1E1E1E;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-goal:hover {
+    -fx-text-fill: #E0E0E0;
+}
+.btn-goal-active {
+    -fx-background-color: #00C897;
+    -fx-text-fill: #121212;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+/* ── Text Fields & Areas ── */
+.text-field, .text-area, .password-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #E0E0E0;
+    -fx-prompt-text-fill: #666666;
+    -fx-border-color: #555555;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 10 12;
+    -fx-font-size: 14px;
+}
+.text-field:focused, .text-area:focused, .password-field:focused {
+    -fx-border-color: #00C897;
+}
+
+/* ── ComboBox ── */
+.combo-box {
+    -fx-background-color: #121212;
+    -fx-border-color: #555555;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4;
+}
+.combo-box .list-cell {
+    -fx-text-fill: #E0E0E0;
+    -fx-background-color: #121212;
+    -fx-font-size: 14px;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: #1E1E1E;
+}
+.combo-box-popup .list-cell {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #E0E0E0;
+    -fx-padding: 8 12;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #2A2A2A;
+}
+
+/* ── Cards ── */
+.card {
+    -fx-background-color: #1E1E1E;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 2);
+}
+
+.card-dark {
+    -fx-background-color: #181818;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+}
+
+/* ── Navbar ── */
+.navbar {
+    -fx-background-color: #1E1E1E;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2);
+}
+
+.navbar-brand {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+}
+
+/* ── Chat Bubbles ── */
+.chat-bubble-user {
+    -fx-background-color: #00C897;
+    -fx-text-fill: #121212;
+    -fx-background-radius: 12 12 4 12;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+}
+
+.chat-bubble-ai {
+    -fx-background-color: #262626;
+    -fx-text-fill: #E0E0E0;
+    -fx-background-radius: 12 12 12 4;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+}
+
+/* ── ScrollPanes ── */
+.scroll-pane {
+    -fx-background: #121212;
+    -fx-background-color: #121212;
+}
+.scroll-pane .viewport {
+    -fx-background-color: #121212;
+}
+.scroll-pane .scroll-bar:vertical,
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #1E1E1E;
+}
+.scroll-pane .scroll-bar:vertical .thumb,
+.scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #444444;
+    -fx-background-radius: 4;
+}
+
+/* ── Feature Cards ── */
+.feature-card {
+    -fx-background-color: #1E1E1E;
+    -fx-background-radius: 14;
+    -fx-padding: 30;
+    -fx-border-color: rgba(0, 200, 151, 0.15);
+    -fx-border-radius: 14;
+}
+
+/* ── Pricing Cards ── */
+.pricing-card {
+    -fx-background-color: #1E1E1E;
+    -fx-background-radius: 12;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 12, 0, 0, 3);
+}
+
+.pricing-card-pro {
+    -fx-background-color: #00C897;
+    -fx-background-radius: 12;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 200, 151, 0.3), 16, 0, 0, 4);
+}
+
+/* ── Meal Card ── */
+.meal-card {
+    -fx-background-color: rgba(55, 65, 81, 0.6);
+    -fx-background-radius: 8;
+    -fx-padding: 14;
+}
+
+/* ── Day Card ── */
+.day-card {
+    -fx-background-color: rgba(17, 24, 39, 0.7);
+    -fx-background-radius: 14;
+    -fx-padding: 20;
+}
+
+/* ── Separator ── */
+.separator .line {
+    -fx-border-color: #333333;
+}
+
+/* ── Hyperlinks ── */
+.hyperlink {
+    -fx-text-fill: #00C897;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+}
+.hyperlink:visited {
+    -fx-text-fill: #00C897;
+}
