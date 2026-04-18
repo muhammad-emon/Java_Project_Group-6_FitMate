@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitmate.controller.ProfileController"
+      spacing="20" style="-fx-background-color: #121212;">
+
+    <VBox styleClass="card" spacing="20">
+        <padding><Insets top="30" bottom="30" left="30" right="30"/></padding>
+
+        <!-- Profile Picture Section -->
+        <HBox spacing="16" alignment="CENTER_LEFT">
+            <Label fx:id="avatarLabel" text="+"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #00C897; -fx-background-color: #121212; -fx-background-radius: 40; -fx-min-width: 80; -fx-min-height: 80; -fx-max-width: 80; -fx-max-height: 80; -fx-alignment: center;"/>
+            <VBox spacing="5">
+                <Button text="Upload Photo" styleClass="btn-ghost" style="-fx-text-fill: #00C897;" onAction="#handleUploadPhoto"/>
+            </VBox>
+        </HBox>
+
+        <!-- Form Grid -->
+        <GridPane hgap="20" vgap="16">
+            <!-- Row 0: First Name / Last Name -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="First Name" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="firstNameField" promptText="Enter first name"/>
+            </VBox>
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label text="Last Name" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="lastNameField" promptText="Enter last name"/>
+            </VBox>
+
+            <!-- Row 1: Age / Gender -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label text="Age" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="ageField" promptText="Enter age"/>
+            </VBox>
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label text="Gender" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <ComboBox fx:id="genderCombo" promptText="Select" maxWidth="Infinity"/>
+            </VBox>
+
+            <!-- Row 2: Height / Weight -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label text="Height (cm)" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="heightField" promptText="Enter height"/>
+            </VBox>
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Label text="Weight (kg)" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="weightField" promptText="Enter weight"/>
+            </VBox>
+
+            <!-- Row 3: Target Weight / Country -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <Label text="Target Weight (kg)" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="targetWeightField" promptText="Enter target"/>
+            </VBox>
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <Label text="Country" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="countryField" promptText="Enter country"/>
+            </VBox>
+
+            <!-- Row 4: Activity Level -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2">
+                <Label text="Activity Level" styleClass="label-secondary" style="-fx-font-size: 13px;"/>
+                <ComboBox fx:id="activityCombo" promptText="Select Activity" maxWidth="400"/>
+            </VBox>
+
+            <!-- Column constraints -->
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+            </columnConstraints>
+        </GridPane>
+
+        <!-- Fitness Goal -->
+        <VBox spacing="12">
+            <Label text="Fitness Goal" styleClass="label-heading" style="-fx-font-size: 18px;"/>
+            <HBox spacing="12">
+                <Button fx:id="btnLose" text="Lose Weight" styleClass="btn-goal" onAction="#selectGoal"/>
+                <Button fx:id="btnMaintain" text="Maintain" styleClass="btn-goal" onAction="#selectGoal"/>
+                <Button fx:id="btnGain" text="Gain Weight" styleClass="btn-goal" onAction="#selectGoal"/>
+            </HBox>
+        </VBox>
+
+        <!-- Save Button -->
+        <HBox alignment="CENTER">
+            <Button fx:id="saveButton" text="Save Changes" styleClass="btn-primary"
+                    style="-fx-padding: 12 40;" onAction="#handleSave"/>
+        </HBox>
+
+        <!-- Status Label -->
+        <Label fx:id="statusLabel" text="" styleClass="label-accent" alignment="CENTER"
+               style="-fx-font-size: 13px;" visible="false" managed="false"/>
+    </VBox>
+</VBox>
